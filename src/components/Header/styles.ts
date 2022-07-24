@@ -18,10 +18,6 @@ export const Content = styled.section`
   `}
 `;
 
-export const SectionLogo = styled.section`
-  border: 1px solid green;
-`;
+export const LogoArticle = styled.article``;
 
-export const SectionSearch = styled.section`
-  border: 1px solid red;
-`;
+export const SearchArticle = styled.article``;
