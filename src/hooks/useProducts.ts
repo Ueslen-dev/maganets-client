@@ -11,28 +11,16 @@ const useProducts = () => {
     setAllProductsInContext,
     productsContext,
     handleProductWishlist,
-    productsWishlist
+    skusProductsWishlistContext
   } = context;
 
-  const getProductsWishlist = useCallback(() => {
-    const wishlistLocalStorage = localStorage.getItem('wishlist');
-
-    const skusWishlist = wishlistLocalStorage
-      ? wishlistLocalStorage.split(',').map((sku: string) => Number(sku))
-      : productsWishlist;
-
-    return skusWishlist;
-  }, [productsWishlist]);
-
   const setProductsWishlist = useCallback(() => {
-    const allProductsWishlist = getProductsWishlist();
-
     const filterProductsWishlist = productsContext.filter((product) => {
-      return allProductsWishlist.includes(product.sku);
+      return skusProductsWishlistContext.includes(product.sku);
     });
 
     return setWishlist(filterProductsWishlist);
-  }, [productsContext, getProductsWishlist]);
+  }, [productsContext, skusProductsWishlistContext]);
 
   useEffect(() => {
     return setProductsWishlist();

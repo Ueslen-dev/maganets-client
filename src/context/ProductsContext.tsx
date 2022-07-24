@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { createContext } from 'react';
 import ProductsInterface from 'interfaces/Products';
 
@@ -10,7 +10,7 @@ interface ProductsContextInterface {
   setAllProductsInContext: (products: ProductsInterface[]) => void;
   handleProductWishlist: (sku: number) => void;
   productsContext: ProductsInterface[];
-  productsWishlist: number[];
+  skusProductsWishlistContext: number[];
 }
 
 const ProductsContext = createContext<ProductsContextInterface>(
@@ -21,7 +21,8 @@ const ProductsProvider = ({ children }: Provider) => {
   const [productsContext, setProductsContext] = useState<ProductsInterface[]>(
     []
   );
-  const [productsWishlist, setProductsWishlist] = useState<number[]>([]);
+  const [skusProductsWishlistContext, setSkusProductsWishlistContext] =
+    useState<number[]>([]);
 
   const setAllProductsInContext = useCallback(
     (products: ProductsInterface[]) => {
@@ -31,7 +32,7 @@ const ProductsProvider = ({ children }: Provider) => {
   );
 
   const handleProductWishlist = useCallback((sku: number) => {
-    return setProductsWishlist((prevState) => {
+    return setSkusProductsWishlistContext((prevState) => {
       const skuIsExist = prevState.some((state) => state === sku);
 
       if (skuIsExist) {
@@ -53,15 +54,25 @@ const ProductsProvider = ({ children }: Provider) => {
       setAllProductsInContext,
       handleProductWishlist,
       productsContext,
-      productsWishlist
+      skusProductsWishlistContext
     }),
     [
       setAllProductsInContext,
       handleProductWishlist,
       productsContext,
-      productsWishlist
+      skusProductsWishlistContext
     ]
   );
+
+  useEffect(() => {
+    const skusWishlistLocalStorage = localStorage.getItem('wishlist');
+
+    const skus = skusWishlistLocalStorage
+      ? skusWishlistLocalStorage.split(',').map((sku: string) => Number(sku))
+      : skusProductsWishlistContext;
+
+    return setSkusProductsWishlistContext(skus);
+  }, []);
 
   return (
     <ProductsContext.Provider value={state}>
