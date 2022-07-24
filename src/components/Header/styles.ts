@@ -8,6 +8,7 @@ export const Wrapper = styled.header`
   ${({ theme }) => css`
     border-top: 5px solid ${theme.colors.primaryDark};
     background-color: ${theme.colors.primary};
+    z-index: ${theme.layers.menu};
   `}
 
   @media (min-width: ${tablet}) {

@@ -24,11 +24,11 @@ const Wishlist = () => {
       <Container>
         <Breadcrumb routes={breadcrumbRoutes} />
         <S.ProductGroup>
-          {[0, 2, 3, 4, 5, 6].map((item) => {
+          {[0, 2, 3, 4].map((item) => {
             return (
               <Product
                 key={item}
-                img="https://via.placeholder.com/150"
+                img="https://via.placeholder.com/120"
                 name="Produto de bebê"
                 price="R$4,00"
               />

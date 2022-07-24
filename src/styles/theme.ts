@@ -27,7 +27,8 @@ export default {
     secondary: '#debb27',
     white: '#f0f2f0',
     black: '#000000',
-    gray: '#707070'
+    gray: '#707070',
+    red: '#a22d20'
   },
   spacings: {
     xxsmall: '0.8rem',
@@ -37,5 +38,8 @@ export default {
     large: '4.0rem',
     xlarge: '4.8rem',
     xxlarge: '5.6rem'
+  },
+  layers: {
+    menu: 20
   }
 };
