@@ -3,10 +3,16 @@ import { tablet } from 'utils/devices';
 
 export const Wrapper = styled.header`
   width: 100%;
+  position: fixed;
+
   ${({ theme }) => css`
     border-top: 5px solid ${theme.colors.primaryDark};
     background-color: ${theme.colors.primary};
   `}
+
+  @media (min-width: ${tablet}) {
+    position: static;
+  }
 `;
 
 export const Content = styled.section`
@@ -15,7 +21,7 @@ export const Content = styled.section`
   align-items: center;
 
   ${({ theme }) => css`
-    padding: ${theme.spacings.medium};
+    padding: ${theme.spacings.xxsmall} 0 ${theme.spacings.xsmall} 0;
   `}
 
   @media (min-width: ${tablet}) {

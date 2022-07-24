@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import { tablet } from 'utils/devices';
 
 const GlobalStyles = createGlobalStyle`
 *{
@@ -17,6 +18,12 @@ ${({ theme }) => css`
   body {
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.medium};
+    background-color: ${theme.colors.white};
+    margin-bottom: ${theme.spacings.large};
+
+    @media (min-width: ${tablet}) {
+      margin-bottom: 0;
+    }
   }
 `}
 `;

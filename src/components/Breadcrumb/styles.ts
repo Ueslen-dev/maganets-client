@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
+import { tablet } from 'utils/devices';
 
 export const Wrapper = styled.ul`
   display: flex;
+  margin-top: 120px;
 
   li:last-child {
     span {
@@ -12,6 +14,10 @@ export const Wrapper = styled.ul`
   ${({ theme }) => css`
     gap: ${theme.spacings.xxsmall};
   `}
+
+  @media (min-width: ${tablet}) {
+    margin: 0;
+  }
 `;
 
 export const Routes = styled.li`

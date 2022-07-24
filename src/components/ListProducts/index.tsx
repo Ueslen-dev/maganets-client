@@ -1,5 +1,6 @@
 import Breadcrumb from 'components/Breadcrumb';
 import Container from 'components/Container';
+import Product from 'components/Product';
 
 import routes from 'routes';
 
@@ -17,7 +18,18 @@ const ListProducts = () => {
     <S.Wrapper>
       <Container>
         <Breadcrumb routes={breadcrumbRoutes} />
-        <h1>Página principal</h1>
+        <S.ProductGroup>
+          {[0, 2, 3, 4, 5, 6].map((item) => {
+            return (
+              <Product
+                key={item}
+                img="https://via.placeholder.com/150"
+                name="Produto de bebê"
+                price="R$4,00"
+              />
+            );
+          })}
+        </S.ProductGroup>
       </Container>
     </S.Wrapper>
   );

@@ -5,7 +5,7 @@ import { tablet } from 'utils/devices';
 export const Wrapper = styled.section`
   display: flex;
   justify-content: space-around;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   left: 0;
@@ -22,7 +22,7 @@ export const Wrapper = styled.section`
   ${({ theme }) => css`
     background-color: ${theme.colors.primary};
     gap: ${theme.spacings.small};
-    padding: ${theme.spacings.xsmall};
+    padding: ${theme.spacings.xxsmall};
   `}
 
   @media (min-width: ${tablet}) {
