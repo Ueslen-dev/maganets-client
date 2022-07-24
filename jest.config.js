@@ -9,8 +9,9 @@ module.exports = {
     '!src/**/styles.ts',
     '!src/pages/**/*.tsx',
     '!src/styles/**/*.ts',
-    '!src/utils/apollo.ts',
-    '!src/utils/apolloCache.ts',
+    '!src/context/**/*.tsx',
+    '!src/mocks/**/*.ts',
+    '!src/utils/**/*.ts(x)',
     '!src/types/**/*.d.ts',
     '!src/graphql/**/*.ts',
     '!src/**/mock.ts'

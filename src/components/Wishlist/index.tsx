@@ -33,7 +33,7 @@ const Wishlist = () => {
         {isEmpty(wishlist) ? (
           <Loading />
         ) : (
-          <S.ProductGroup>
+          <S.ProductGroup data-testid="wishlist">
             {wishlist.map((product) => {
               return (
                 <Product

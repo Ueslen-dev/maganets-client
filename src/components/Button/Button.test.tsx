@@ -21,9 +21,7 @@ describe('Component <Button/>', () => {
   });
 
   it('onClick é acionado corretamente', async () => {
-    const onClick = () => jest.fn();
-
-    renderWithTheme(<Button name="Lista de desejos" onClick={onClick()} />);
+    renderWithTheme(<Button name="Lista de desejos" />);
 
     const buttonElement = screen.getByRole('button');
     await userEvent.click(buttonElement);

@@ -29,7 +29,7 @@ const ListProducts = () => {
         {isEmpty(productsContext) ? (
           <Loading />
         ) : (
-          <S.ProductGroup>
+          <S.ProductGroup data-testid="listProducts">
             {productsContext.map((product) => {
               return (
                 <Product

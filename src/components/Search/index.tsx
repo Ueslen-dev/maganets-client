@@ -7,7 +7,7 @@ type Props = {
   value?: string | number;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 };
-const Search = ({ placeholder, value, onChange }: Props) => {
+const Search = ({ value, onChange, placeholder = 'Busca' }: Props) => {
   const iconSize = 20;
 
   return (

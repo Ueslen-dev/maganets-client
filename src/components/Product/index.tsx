@@ -30,12 +30,16 @@ const Product = ({
         <S.ButtonAddWishlist
           onClick={addWishlist}
           isAddedToWishlist={isAddedToWishlist}
+          aria-label="Adicionar produto a lista de desejos"
         >
           <ImHeartIcon className="icon" />
         </S.ButtonAddWishlist>
       )}
       {isActionRemoveItemForWishlist && (
-        <S.ButtonRemoveItemForWishlist onClick={removeItemForWishlist}>
+        <S.ButtonRemoveItemForWishlist
+          onClick={removeItemForWishlist}
+          aria-label="Remover produto da lista de desejos"
+        >
           <IoIosCloseCircleOutlineIcon className="icon" />
         </S.ButtonRemoveItemForWishlist>
       )}
