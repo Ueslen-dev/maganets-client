@@ -21,6 +21,7 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "lint": "eslint src",
     "next": "^12.2.3",
     "next-pwa": "^5.2.23",
