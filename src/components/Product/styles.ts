@@ -33,6 +33,7 @@ export const Name = styled.h3`
     font-size: ${theme.font.sizes.large};
     margin-bottom: ${theme.spacings.large};
     color: ${theme.colors.gray};
+    padding: ${theme.spacings.small};
   `}
 `;
 

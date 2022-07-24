@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { GetStaticProps } from 'next';
 
 import Header from 'components/Header';
@@ -7,8 +7,15 @@ import ListProducts from 'components/ListProducts';
 import { fetchGetAllProducts } from 'services/magaNetsBff';
 import ProductsInterface from 'interfaces/Products';
 
-const Home = ({ products }: ProductsInterface) => {
-  console.log(products, 'produtos');
+import useProducts from 'hooks/useProducts';
+
+const Home = ({ products }: { products: ProductsInterface[] }) => {
+  const { setAllProductsInContext } = useProducts();
+
+  useEffect(() => {
+    setAllProductsInContext(products);
+  }, [products, setAllProductsInContext]);
+
   return <ListProducts />;
 };
 

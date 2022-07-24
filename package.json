@@ -23,6 +23,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "lint": "eslint src",
+    "lodash": "^4.17.21",
     "next": "^12.2.3",
     "next-pwa": "^5.2.23",
     "react": "^18.2.0",

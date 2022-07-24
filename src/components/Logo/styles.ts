@@ -1,6 +1,9 @@
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.main`
+  a {
+    text-decoration: none;
+  }
   ${({ theme }) => css`
     h1 {
       font-weight: ${theme.font.bold};

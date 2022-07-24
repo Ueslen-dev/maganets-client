@@ -1,13 +1,25 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
+import { GetStaticProps } from 'next';
 
 import Header from 'components/Header';
-import Wishlist from 'components/Wishlist';
+import WishlistContent from 'components/Wishlist';
 
-const wishlist = () => {
-  return <Wishlist />;
+import { fetchGetAllProducts } from 'services/magaNetsBff';
+import ProductsInterface from 'interfaces/Products';
+
+import useProducts from 'hooks/useProducts';
+
+const Wishlist = ({ products }: { products: ProductsInterface[] }) => {
+  const { setAllProductsInContext } = useProducts();
+
+  useEffect(() => {
+    setAllProductsInContext(products);
+  }, [products, setAllProductsInContext]);
+
+  return <WishlistContent />;
 };
 
-wishlist.getLayout = function getLayout(page: ReactElement) {
+Wishlist.getLayout = function getLayout(page: ReactElement) {
   return (
     <>
       <Header />
@@ -15,4 +27,17 @@ wishlist.getLayout = function getLayout(page: ReactElement) {
     </>
   );
 };
-export default wishlist;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const products = await fetchGetAllProducts();
+  const hour = 60 * 60 * 4; //4 hour
+
+  return {
+    props: {
+      products
+    },
+    revalidate: hour
+  };
+};
+
+export default Wishlist;
