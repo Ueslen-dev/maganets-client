@@ -10,7 +10,7 @@ const Breadcrumb = ({ routes }: Props) => {
   return (
     <S.Wrapper>
       {routes?.map((route) => (
-        <S.Routes key={route.id}>
+        <S.Routes key={route.id} data-testid="breadcrumb">
           <Link href={route.to}>
             <a>{route.name}</a>
           </Link>

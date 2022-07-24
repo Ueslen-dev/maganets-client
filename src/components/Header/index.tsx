@@ -7,7 +7,7 @@ import * as S from './styles';
 
 const Header = () => {
   return (
-    <S.Wrapper>
+    <S.Wrapper data-testid="header">
       <Container>
         <S.Content>
           <S.LogoArticle>
