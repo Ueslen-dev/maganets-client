@@ -31,7 +31,7 @@ const Wishlist = () => {
       <Container>
         <Breadcrumb routes={breadcrumbRoutes} />
         {isEmpty(wishlist) ? (
-          <Loading />
+          <Loading title="Você não tem nenhum produto na lista de desejos" />
         ) : (
           <S.ProductGroup data-testid="wishlist">
             {wishlist.map((product) => {
