@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/65665108/180672190-10255aa2-ce1e-4f00-8949-8b52ecd53666.png" width="250"/>
+</div>
+
+## :bulb: Sobre o projeto
+O MagaNets é um desafio técnico para desenvolvedor frontend oferecido pela Luizalabs
+
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/65665108/180672238-e9fff6ca-8da2-44c6-a0ee-e52f7a892eed.png" width="500"/>
+</div>
+
+## 🚀 Tecnologias
+
+Tecnologias que foram utilizadas no projeto:
+
+- [NextJS](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled Component](https://storybook.js.org/)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Lodash](https://lodash.com/)
+## 👀 Observação
+
+O projeto é plugado a uma API externa, para executar a aplicação sem problemas será necessário clonar o repositório da API: [Maganets - BFF](https://github.com/Ueslen-dev/maganets-bff)
+
+
+## 💻 Começando
+Para começar precisamos instalar algumas coisas
+
+### Requerimentos
+
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/)
+
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone https://github.com/Ueslen-dev/maganets-client.git && cd maganets-client
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Siga esses passos**
+1. Na pasta raiz do projeto crie um arquivo chamado `.env.local`
+2. Insira a seguinte variável de ambiente:
+```bash
+NEXT_PUBLIC_MAGANETS_BFF= conexão com a sua API local
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# Instale as dependências
+$ yarn
+# Rodando o projeto
+$ yarn dev
+```
+## 📝 Licença
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Esse projeto é licenciado pelo MIT License
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feito com amor 💙&nbsp; por Ueslen Santana 👋 &nbsp;[Veja meu linkedin](https://www.linkedin.com/in/ueslen-santos)

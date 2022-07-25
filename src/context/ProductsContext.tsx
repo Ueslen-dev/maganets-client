@@ -21,6 +21,7 @@ const ProductsProvider = ({ children }: Provider) => {
   const [productsContext, setProductsContext] = useState<ProductsInterface[]>(
     []
   );
+
   const [skusProductsWishlistContext, setSkusProductsWishlistContext] =
     useState<number[]>([]);
 
